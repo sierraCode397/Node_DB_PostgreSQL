@@ -1,16 +1,20 @@
 const boom = require('@hapi/boom');
-const getConection = require('../libs/postgres');
+const pool = require('../libs/postgres_pool');
+
 
 class UserService {
-  constructor() {}
+  constructor() {
+    this.pool = pool;
+    this.pool.on('error', (err) => console.error(err));
+  }
 
   async create(data) {
     return data;
   }
 
   async find() {
-    const client = await getConection();
-    const rta = await client.query('SELECT * FROM task');
+    const query = 'SELECT * FROM task';
+    const rta = await this.pool.query(query);
     return rta.rows;
   }
 
