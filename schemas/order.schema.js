@@ -5,12 +5,12 @@ const name = Joi.string().min(3).max(15);
 const description = Joi.string().uri();
 
 const createOrderSchema = Joi.object({
-  name: name.required(),
+  description: name.required(),
   image: description.required()
 });
 
 const updateOrderSchema = Joi.object({
-  name: name,
+  description: name,
   image: description
 });
 

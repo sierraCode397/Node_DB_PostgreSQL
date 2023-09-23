@@ -9,7 +9,7 @@ const CategorieSchema = {
     primaryKey: true,
     type: DataTypes.INTEGER
   },
-  name_categorie: {
+  name: {
     allowNull: false,
     type: DataTypes.STRING,
   },

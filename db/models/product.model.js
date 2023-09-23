@@ -13,7 +13,7 @@ const ProductSchema = {
     allowNull: false,
     type: DataTypes.STRING,
   },
-  description: {
+  price: {
     allowNull: false,
     type: DataTypes.STRING
   },
