@@ -8,10 +8,10 @@ const config = {
   dbHost: process.env.DB_HOST,
   dbName: process.env.DB_NAME,
   dbPort: process.env.DB_PORT,
-  pgEmail: process.env.PG_EMAIL,
+/*   pgEmail: process.env.PG_EMAIL,
   pgPassword: process.env.PG_PASSWORD,
   pgPort: process.env.PG_PORT,
-  pgRefport: process.env.PG_REFPORT,
+  pgRefport: process.env.PG_REFPORT, */
 }
 
 module.exports = { config };
