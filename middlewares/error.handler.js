@@ -14,7 +14,11 @@ function errorHandler(err, req, res, next) {
 
 function handleSQLError(err, req, res, next) {
   if (err instanceof ValidationError) {
-    throw boom.conflict(err.errors[0].message)
+    res.status(409).json({
+      statusCode: 409,
+      message: err.name,
+      errors: err.errors
+    });
   }
   next(err)
 }
