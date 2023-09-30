@@ -12,7 +12,7 @@ class ProductsService {
 
   async find() {
     const rta = await models.Product.findAll({
-      include: ['categorie']
+      include: ['categorie'] //La associate/asociacion categorie
     });
     return rta;
   }

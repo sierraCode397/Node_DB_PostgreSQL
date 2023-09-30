@@ -46,7 +46,10 @@ const ProductSchema = {
 
 class Product extends Model {
   static associate(models) {
-    this.belongsTo(models.Categorie, {foreignKey: 'id', as: 'categorie'});
+    this.belongsTo(models.Categorie, {
+      foreignKey: 'id', //hace referencia a el id de la otra entidad
+      as: 'categorie'
+    });
   }
   static config(sequelize){
     return {

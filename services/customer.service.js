@@ -7,7 +7,7 @@ class CustomerService {
 
   async find() {
     const rta = await models.Customer.findAll({
-      include: ['user']
+      include: ['user'] //La associate/asociacion user
     });
     return rta;
   }
@@ -22,7 +22,7 @@ class CustomerService {
 
   async create(data) {
     const newCustomer = await models.Customer.create(data, {
-      include: ['user']
+      include: ['user'] //La associate/asociacion user
     });
     return newCustomer;
   }
