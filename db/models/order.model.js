@@ -33,7 +33,13 @@ class Order extends Model {
   static associate(models) {
     this.belongsTo(models.Customer, {
       as: 'customer'
-    })
+    });
+    this.belongsToMany(models.Product, {
+      as: 'items',
+      through: models.OrderProduct,
+      foreignKey: 'order_id',
+      otherKey: 'product_id'
+    });
   }
   static config(sequelize){
     return {
