@@ -27,7 +27,7 @@ const OrderSchema = {
     field: 'create_at',
     defaultValue: Sequelize.NOW
   },
-/*   total: {
+  total: {
     type: DataTypes.VIRTUAL,
     get(){
       if(this.items.length > 0){
@@ -37,7 +37,7 @@ const OrderSchema = {
       }
       return 0;
     }
-  } */
+  }
 }
 
 class Order extends Model {
