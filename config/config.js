@@ -9,7 +9,8 @@ const config = {
   dbHost: process.env.DB_HOST,
   dbName: process.env.DB_NAME,
   dbPort: process.env.DB_PORT,
-  dbUrl: process.env.DATABASE_URL
+  dbUrl: process.env.DATABASE_URL,
+  dbLocalUrl: process.env.DATABASE_LOCAL_URL
 /*   pgEmail: process.env.PG_EMAIL,
   pgPassword: process.env.PG_PASSWORD,
   pgPort: process.env.PG_PORT,

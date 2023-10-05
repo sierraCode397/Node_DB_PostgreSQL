@@ -8,9 +8,20 @@ const pg = require('pg')
 const app = express();
 const port = process.env.PORT || 3000;
 
+let URI = ''
+let option = {
+  connectionString: URI
+}
+
+if(config.isProd){
+  URI = config.dbUrl;
+}else {
+  URI = config.dbLocalUrl,
+  option.ssl = true // Solo para desarrollo
+}
+
 const pool = new pg.Pool({
-  connectionString: config.dbUrl,
-  //ssl: true   Solo para desarrollo
+  option
 })
 
 app.use(express.json());
