@@ -9,20 +9,22 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 let URI = ''
-let option = {
-  connectionString: URI
-}
+
+let option = {}
 
 if(config.isProd){
   URI = config.dbUrl;
 }else {
   URI = config.dbLocalUrl,
+  option.connectionString = URI,
   option.ssl = true // Solo para desarrollo
 }
 
 const pool = new pg.Pool({
   option
 })
+
+
 
 app.use(express.json());
 
@@ -39,7 +41,7 @@ const options = {
 app.use(cors(options));
 
 app.get('/', (req, res) => {
-  res.send('Hola mi server en express');
+  res.send('Hola mi server en express  ---   Configuracion: "'+ option.ssl + '" --- Conexion a la Base de datos: '+ URI);
 });
 
 app.get('/ping', async (req, res) => {
@@ -57,5 +59,5 @@ app.use(errorHandler);
 
 
 app.listen(port, () => {
-  console.log('Mi port' +  port);
+  console.log('Mi port ' +  port);
 });
