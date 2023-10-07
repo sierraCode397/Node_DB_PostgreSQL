@@ -40,11 +40,11 @@ const options = {
 }
 app.use(cors(options));
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send('Hola mi server en express  ---   Configuracion: "'+ option.ssl + '" --- Conexion a la Base de datos: '+ URI);
 });
 
-app.get('/ping', async (req, res) => {
+app.get('/api/ping', async (req, res) => {
   const result = await pool.query('SELECT NOW()')
   return res.json(result.rows[0])
 });
