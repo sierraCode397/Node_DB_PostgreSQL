@@ -15,13 +15,11 @@ let option = {}
 if(config.isProd){
   URI = config.dbUrl;
 }else {
-  URI = config.dbLocalUrl,
-  option.connectionString = URI,
-  option.ssl = true // Solo para desarrollo
+  URI = config.dbLocalUrl
 }
 
 const pool = new pg.Pool({
-  option
+  connectionString: URI
 })
 
 
