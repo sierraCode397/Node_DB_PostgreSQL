@@ -22,8 +22,6 @@ const pool = new pg.Pool({
   connectionString: URI
 })
 
-
-
 app.use(express.json());
 
 const whitelist = ['http://localhost:8080', 'https://myapp.co', '*'];
@@ -38,8 +36,11 @@ const options = {
 }
 app.use(cors(options));
 
+app.use(express.static('public'));
+
 app.get('/api', (req, res) => {
-  res.send('Hola mi server en express  ---   Configuracion: "'+ option.ssl + '" --- Conexion a la Base de datos: '+ URI);
+  res.sendFile(__dirname + '/public/index.html');
+ // res.send('Hola mi server en express  ---   Configuracion: "'+ option.ssl + '" --- Conexion a la Base de datos: '+ URI);
 });
 
 app.get('/api/ping', async (req, res) => {
