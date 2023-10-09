@@ -30,6 +30,7 @@ const OrderSchema = {
   total: {
     type: DataTypes.VIRTUAL,
     get() {
+      //La función Array.isArray() devuelve true si la variable proporcionada es un arreglo, de lo contrario, devuelve false
       if (Array.isArray(this.items) && this.items.length > 0) {
         return this.items.reduce((total, item) => {
           return total + (item.price * item.OrderProduct.amount);
