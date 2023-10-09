@@ -10,8 +10,6 @@ const port = process.env.PORT || 3000;
 
 let URI = ''
 
-let option = {}
-
 if(config.isProd){
   URI = config.dbUrl;
 }else {
@@ -40,12 +38,26 @@ app.use(express.static('public'));
 
 app.get('/api', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
- // res.send('Hola mi server en express  ---   Configuracion: "'+ option.ssl + '" --- Conexion a la Base de datos: '+ URI);
 });
+
+/* app.get('/api', (req, res) => {
+  res.send('Hola mi server en express  ---   Configuracion: "'+ option.ssl + '" --- Conexion a la Base de datos: '+ URI);
+}); */
 
 app.get('/api/ping', async (req, res) => {
   const result = await pool.query('SELECT NOW()')
-  return res.json(result.rows[0])
+
+  const additionalResponse = {
+    message:'Conexion a la Base de datos: -----> '+ URI,
+  };
+
+  // Devolver ambas respuestas en un objeto
+  const responseData = {
+    pingResult: result.rows[0],
+    additionalResponse: additionalResponse,
+  };
+
+  return res.json(responseData);
 });
 
 routerApi(app);
