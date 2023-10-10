@@ -44,10 +44,11 @@ Crea un archivo **.ENV** en la raíz del proyecto y proporciona las siguientes v
 Asegúrate de tener una base de datos en ejecución configurada adecuadamente, ya sea mediante Docker u otro servicio externo. Ejecuta la primera migración para crear las tablas en la base de datos.
 
 ## Estructura del Proyecto
-La aplicación sigue la arquitectura Clean architecture y se organiza en capas de modelos y servicios. Puedes expandir el proyecto agregando más capas de modelos o servicios según tus necesidades.
+La aplicación sigue la arquitectura **The Clean Architecture** y se organiza en capas de modelos y servicios. Puedes expandir el proyecto agregando más capas de modelos o servicios según tus necesidades.
 
 ## Problemas Comunes
 **Problema**: Tratar de acceder a la base de datos cuando esta aún no ha sido creada o ejecutada.
+
 **Solución**: Asegúrate de que tu base de datos se esté ejecutando correctamente antes de iniciar la aplicación.
 
 ## Licencia
@@ -55,13 +56,15 @@ Este proyecto está bajo la licencia ISC.
 
 ## Contacto
 **Isaac Luisjuan**
+
 Correo Electrónico: izaack107@gmail.com
+
 Sitio Web: [SierraCode397](https://sierracode397.github.io/)
 ##### Enlace al Repositorio:
 Puedes encontrar el código fuente de este proyecto en [GitHub](https://github.com/sierraCode397/Node_DB_PostgreSQL).
 
 ## Agradecimientos
-Este proyecto fue creado en la escuela de Platzi como parte del curso "Curso de Backend con Node.js: Base de Datos con PostgreSQL".
+Este proyecto fue creado en la escuela de Platzi como parte del curso **"Curso de Backend con Node.js: Base de Datos con PostgreSQL"**.
 
 Asegúrate de tener Node.js y npm instalados en tu sistema antes de ejecutar estos scripts.
 
