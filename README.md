@@ -23,43 +23,44 @@ Antes de comenzar, asegúrate de tener instalado Node.js y npm en tu sistema. Pu
 
 -  npm install
 
-##Uso
-#####Para ejecutar la aplicación en un entorno local, utiliza el siguiente comando:
+## Uso
+
+##### Para ejecutar la aplicación en un entorno local, utiliza el siguiente comando:
 
  - npm run dev
 
-#####Para ejecutar la aplicación en producción, utiliza:
+##### Para ejecutar la aplicación en producción, utiliza:
 
 - npm run start
 
 La aplicación estará disponible en el puerto 3000 por defecto, pero puede ser configurado.
 
-##Configuración
+## Configuración
 Crea un archivo **.ENV** en la raíz del proyecto y proporciona las siguientes variables de entorno para la conexión a la base de datos:
 
 > DATABASE_URL=''
-DATABASE_LOCAL_URL=''
+> DATABASE_LOCAL_URL=''
 
 Asegúrate de tener una base de datos en ejecución configurada adecuadamente, ya sea mediante Docker u otro servicio externo. Ejecuta la primera migración para crear las tablas en la base de datos.
 
-##Estructura del Proyecto
+## Estructura del Proyecto
 La aplicación sigue la arquitectura Clean architecture y se organiza en capas de modelos y servicios. Puedes expandir el proyecto agregando más capas de modelos o servicios según tus necesidades.
 
-##Problemas Comunes
+## Problemas Comunes
 **Problema**: Tratar de acceder a la base de datos cuando esta aún no ha sido creada o ejecutada.
 **Solución**: Asegúrate de que tu base de datos se esté ejecutando correctamente antes de iniciar la aplicación.
 
-##Licencia
+## Licencia
 Este proyecto está bajo la licencia ISC.
 
-##Contacto
+## Contacto
 **Isaac Luisjuan**
 Correo Electrónico: izaack107@gmail.com
 Sitio Web: [SierraCode397](https://sierracode397.github.io/)
-#####Enlace al Repositorio:
+##### Enlace al Repositorio:
 Puedes encontrar el código fuente de este proyecto en [GitHub](https://github.com/sierraCode397/Node_DB_PostgreSQL).
 
-##Agradecimientos
+## Agradecimientos
 Este proyecto fue creado en la escuela de Platzi como parte del curso "Curso de Backend con Node.js: Base de Datos con PostgreSQL".
 
 Asegúrate de tener Node.js y npm instalados en tu sistema antes de ejecutar estos scripts.
